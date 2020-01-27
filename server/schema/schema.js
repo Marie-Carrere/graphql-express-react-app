@@ -12,19 +12,6 @@ const {
   GraphQLInt
 } = graphql;
 
-// dummy data
-// const books = [
-//   { name: 'Name of the Wind', genre: 'Fantasy', id: '1', authorId: '1' },
-//   { name: 'The Final Empire', genre: 'Fantasy', id: '2', authorId: '2' },
-//   { name: 'The Long Earth', genre: 'Sci-Fi', id: '3', authorId: '3' },
-// ];
-
-// const authors = [
-//   { name: 'Patrick Rothfuss', id: '1', age: '30' },
-//   { name: 'Brandon Sanderson', id: '2', age: '31' },
-//   { name: 'Terry Pratchett', id: '3', age: '32' }
-// ];
-
 const BookType = new GraphQLObjectType({
   name: 'Book',
   fields: () => ({
