@@ -9,7 +9,6 @@ const {
   GraphQLSchema, 
   GraphQLID, 
   GraphQLList,
-  GraphQLInt
 } = graphql;
 
 const BookType = new GraphQLObjectType({
@@ -80,13 +79,11 @@ const Mutation = new GraphQLObjectType({
     addAuthor: {
       type: AuthorType,
       args: {
-        name: { type: GraphQLString },
-        age: { type: GraphQLInt }
+        name: { type: GraphQLString }
       },
       resolve(parent, args) {
-        let author = new AuthorType({
-          name: args.name,
-          age: args.age
+        let author = new Author({
+          name: args.name
         });
         return author.save();
       }

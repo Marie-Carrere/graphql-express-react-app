@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
+import BookList from './components/BookList';
 
-function App() {
-  return (
-    <div>
-      <h1>Apollo App 🚀</h1>
-    </div>
-  );
+
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql'
+});
+
+class App extends Component {
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        <div>
+          <h1>Reading List</h1>
+          <BookList />
+        </div>
+      </ApolloProvider>
+    );
+  }
 }
+
 
 export default App;
